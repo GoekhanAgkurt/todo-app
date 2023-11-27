@@ -1,17 +1,20 @@
-import { initialTodos } from "@/lib/data";
 import GlobalStyle from "../styles";
+import { initialTodos } from "@/lib/data";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
-  const [todos, useTodos] = useLocalStorageState("todos", {
+  const [todos, setTodos] = useLocalStorageState("todos", {
     defaultValue: initialTodos,
   });
 
-  console.log("das sind die todos:", todos);
+  function handleAddTodo(newTodo) {
+    setTodos([...todos, newTodo]);
+  }
+
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} todos={todos} />
+      <Component {...pageProps} todos={todos} onAddTodo={handleAddTodo} />
     </>
   );
 }
