@@ -1,3 +1,14 @@
-export default function TodoItem({ todo }) {
-  return <li>{todo.title}</li>;
+export default function TodoItem({ todo, onDeleteTodo }) {
+  return (
+    <li>
+      {todo.title}{" "}
+      <button
+        onClick={() => {
+          onDeleteTodo(todo.id);
+        }}
+      >
+        delete
+      </button>
+    </li>
+  );
 }

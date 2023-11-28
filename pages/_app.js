@@ -11,10 +11,19 @@ export default function App({ Component, pageProps }) {
     setTodos([...todos, newTodo]);
   }
 
+  function handleDeleteTodo(id) {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
+
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} todos={todos} onAddTodo={handleAddTodo} />
+      <Component
+        {...pageProps}
+        todos={todos}
+        onAddTodo={handleAddTodo}
+        onDeleteTodo={handleDeleteTodo}
+      />
     </>
   );
 }
