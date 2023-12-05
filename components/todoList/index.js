@@ -12,3 +12,14 @@ export default function TodoList({ todos, onDeleteTodo }) {
     </>
   );
 }
+
+{
+  /* <>
+<h2>Gifts List</h2>
+<ul>
+  {gifts.map((gift) => (
+    <GiftCard key={gift.id} gift={gift} onDeleteGift={onDeleteGift} />
+  ))}
+</ul>
+</> */
+}
