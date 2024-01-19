@@ -25,7 +25,7 @@ export default function Create({ onAddTodo }) {
   }
 
   return (
-    <>
+    <main>
       <h2>Create a new Todo</h2>
       <form onSubmit={addTodo}>
         <label>Title</label>
@@ -45,6 +45,6 @@ export default function Create({ onAddTodo }) {
         ></input>
         <button type="submit"> Submit</button>
       </form>
-    </>
+    </main>
   );
 }
